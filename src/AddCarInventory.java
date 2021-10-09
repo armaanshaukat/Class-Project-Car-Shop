@@ -24,6 +24,6 @@ public class AddCarInventory implements Automobile {
 	}
 
 	public Iterator createIterator() {
-		return  new InventoryIterator(carInventory);
+		return  new CarInventoryIterator(carInventory);
 	}
 }

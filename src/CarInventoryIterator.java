@@ -1,10 +1,10 @@
 
-public class InventoryIterator implements Iterator {
+public class CarInventoryIterator implements Iterator {
 
 	CarInventory[] inventory;
 	int position = 0;
 	
-	public InventoryIterator(CarInventory[] carInventory) {
+	public CarInventoryIterator(CarInventory[] carInventory) {
 		this.inventory = carInventory;
 	}
 	
