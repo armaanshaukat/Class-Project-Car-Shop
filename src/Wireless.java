@@ -1,5 +1,4 @@
-
-
+//Decorator Pattern File
 public class Wireless extends FeatureDecorator {
 	
 	public Wireless(VehicleFeatures vehicleFeatures) {

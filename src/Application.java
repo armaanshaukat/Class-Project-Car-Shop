@@ -1,3 +1,4 @@
+//Main Application That Applies the Four Design Patterns
 import java.util.Scanner;
 
 public class Application {
@@ -22,7 +23,9 @@ public class Application {
 		VehicleStore luxuryCar = new LuxuryCarStore();
 		
 		//Decorator Pattern Object Created
-		VehicleFeatures feature = new Technology();
+		VehicleFeatures interiorFeature = new Interior();
+		VehicleFeatures exteriorFeature = new Exterior();
+		VehicleFeatures technologyFeature = new Technology();
 		
 		while (true) {
 			System.out.println("\nSelect an option:");
@@ -37,7 +40,7 @@ public class Application {
 			int option =input.nextInt();
 		
 			if (option == 1) {
-				System.out.println("Please wait for a sales representative");
+				System.out.println("\nPlease wait for a sales representative");
 			}
 			
 			//Observer Pattern to send updates about new vehicle available for sale to magazines subscribed
@@ -47,24 +50,24 @@ public class Application {
 				Scanner input4 = new Scanner(System.in);
 				Scanner input5 = new Scanner(System.in);
 			
-				System.out.print("Enter the manufacturer for your vehicle: ");
+				System.out.print("\nEnter the manufacturer for your vehicle (string): ");
 				String mfgName = input2.next();
-				System.out.print("Enter the model of your vehicle: ");
+				System.out.print("Enter the model of your vehicle (string): ");
 				String modelName = input3.next();
-				System.out.print("Enter the year of your vehicle: ");
+				System.out.print("Enter the year of your vehicle (integer): ");
 				int mfgYear = input4.nextInt();
-				System.out.print("Enter the wanted price of sale for your vehicle: ");
+				System.out.print("Enter the wanted price of sale for your vehicle (integer): ");
 				int salePrice = input5.nextInt();
-			
+				System.out.println();
 				lotData.addedAutomobile(mfgName, modelName, mfgYear, salePrice);
 			}
 		
 			//Abstract Factory Pattern to Create a New Car 
 			if (option == 3) {
-				System.out.println("Select a trim: ");
-				System.out.println("1. Base Trim Car");
-				System.out.println("2. Elite Trim Car");
-				System.out.println("3. Luxury Trim Car");
+				System.out.println("\nSelect a trim: ");
+				System.out.println("1. Base Trim Car - $15000");
+				System.out.println("2. Elite Trim Car - $25000");
+				System.out.println("3. Luxury Trim Car - $35000");
 			
 				Scanner input6 = new Scanner(System.in);
 				System.out.print("Enter your option: ");
@@ -87,7 +90,7 @@ public class Application {
 			
 			//Decorator Pattern to Select Interior Features
 				while (true) {
-					System.out.println("Select Dealership Interior Options to Add on the Stock Vehicle: ");
+					System.out.println("\nSelect Dealership Interior Options to Add on the Stock Vehicle: ");
 					System.out.println("1. Heated Leather Steering Wheel");
 					System.out.println("2. Leather Gear Shift");
 					System.out.println("3. Carbon Fiber Accents");
@@ -97,25 +100,26 @@ public class Application {
 					Scanner input7 = new Scanner(System.in);
 					System.out.print("Selection an option: ");
 					int interiorOption = input7.nextInt();
-				
+					System.out.println();
+					
 					if (interiorOption == 1) {
-						feature = new HeatedSteeringWheel(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						interiorFeature = new HeatedSteeringWheel(interiorFeature);
+						System.out.println(interiorFeature.getDescription() + " $" + interiorFeature.cost());
 					}
 				
 					if (interiorOption == 2) {
-						feature = new LeatherGearShift(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						interiorFeature = new LeatherGearShift(interiorFeature);
+						System.out.println(interiorFeature.getDescription() + " $" + interiorFeature.cost());
 					}
 				
 					if (interiorOption == 3) {
-						feature = new CarbonFiberAccents(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						interiorFeature = new CarbonFiberAccents(interiorFeature);
+						System.out.println(interiorFeature.getDescription() + " $" + interiorFeature.cost());
 					}
 				
 					if (interiorOption == 4) {
-						feature = new BoseAudio(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						interiorFeature = new BoseAudio(interiorFeature);
+						System.out.println(interiorFeature.getDescription() + " $" + interiorFeature.cost());
 					}
 				
 					if (interiorOption == 5) {
@@ -125,34 +129,36 @@ public class Application {
 			
 				//Decorator Pattern to Select Exterior Features 
 				while (true) {
-					System.out.println("Select Dealership Exterior Options to Add on the Stock Vehicle: ");
+					System.out.println("\nSelect Dealership Exterior Options to Add on the Stock Vehicle: ");
 					System.out.println("1. Body Kit");
 					System.out.println("2. LED Head Lights");
 					System.out.println("3. Window Tints (60%)");
 					System.out.println("4. Bike Rack");
-			
+					System.out.println("5. Exit Exterior Options");
+					
 					Scanner input8 = new Scanner(System.in);
 					System.out.print("Selection an option: ");
 					int exteriorOption = input8.nextInt();
-			
+					System.out.println();
+					
 					if (exteriorOption == 1) {
-						feature = new BodyKit(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						exteriorFeature = new BodyKit(exteriorFeature);
+						System.out.println(exteriorFeature.getDescription() + " $" + exteriorFeature.cost());
 					}
 				
 					if (exteriorOption == 2) {
-						feature = new LEDLights(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						exteriorFeature = new LEDLights(exteriorFeature);
+						System.out.println(exteriorFeature.getDescription() + " $" + exteriorFeature.cost());
 					}	
 				
 					if (exteriorOption == 3) {
-						feature = new Tints(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						exteriorFeature = new Tints(exteriorFeature);
+						System.out.println(exteriorFeature.getDescription() + " $" + exteriorFeature.cost());
 					}
 				
 					if (exteriorOption == 4) {
-						feature = new BikeRack(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						exteriorFeature = new BikeRack(exteriorFeature);
+						System.out.println(exteriorFeature.getDescription() + " $" + exteriorFeature.cost());
 					}
 				
 					if (exteriorOption == 5) {
@@ -162,34 +168,36 @@ public class Application {
 			
 				//Decorator Pattern to Select Technology Features 
 				while (true) {
-					System.out.println("Select Dealership Technology Options to Add on the Stock Vehicle: ");
+					System.out.println("\nSelect Dealership Technology Options to Add on the Stock Vehicle: ");
 					System.out.println("1. Camera Systems");
 					System.out.println("2. Wireless Charger and Connectivity");
 					System.out.println("3. Proximity Sensors");
 					System.out.println("4. Navigation System");
+					System.out.println("5. Exit Technology Options");
 				
 					Scanner input9 = new Scanner(System.in);
 					System.out.print("Selection an option: ");
 					int technologyOption = input9.nextInt();
-			
+					System.out.println();
+					
 					if (technologyOption == 1) {
-						feature = new Cameras(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						technologyFeature = new Cameras(technologyFeature);
+						System.out.println(technologyFeature.getDescription() + " $" + technologyFeature.cost());
 					}
 				
 					if (technologyOption == 2) {
-						feature = new Wireless(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						technologyFeature = new Wireless(technologyFeature);
+						System.out.println(technologyFeature.getDescription() + " $" + technologyFeature.cost());
 					}
 				
 					if (technologyOption == 3) {
-						feature = new Sensors(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						technologyFeature = new Sensors(technologyFeature);
+						System.out.println(technologyFeature.getDescription() + " $" + technologyFeature.cost());
 					}
 				
 					if (technologyOption == 4) {
-						feature = new Navigation(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						technologyFeature = new Navigation(technologyFeature);
+						System.out.println(technologyFeature.getDescription() + " $" + technologyFeature.cost());
 					}
 				
 					if (technologyOption == 5) {
@@ -200,10 +208,10 @@ public class Application {
 		
 			//Abstract Factory Pattern to Create a New SUV
 			if (option == 4) {
-				System.out.println("Select a trim: ");
-				System.out.println("1. Base Trim SUV");
-				System.out.println("2. Elite Trim SUV");
-				System.out.println("3. Luxury Trim SUV");
+				System.out.println("\nSelect a trim: ");
+				System.out.println("1. Base Trim SUV - $25000");
+				System.out.println("2. Elite Trim SUV - $35000");
+				System.out.println("3. Luxury Trim SUV - $45000");
 			
 				Scanner input10 = new Scanner(System.in);
 				System.out.print("Enter your option: ");
@@ -226,7 +234,7 @@ public class Application {
 			
 				//Decorator Pattern to Select Interior Features 
 				while (true) {
-					System.out.println("Select Dealership Interior Options to Add on the Stock Vehicle: ");
+					System.out.println("\nSelect Dealership Interior Options to Add on the Stock Vehicle: ");
 					System.out.println("1. Heated Leather Steering Wheel");
 					System.out.println("2. Leather Gear Shift");
 					System.out.println("3. Carbon Fiber Accents");
@@ -236,25 +244,26 @@ public class Application {
 					Scanner input11 = new Scanner(System.in);
 					System.out.print("Selection an option: ");
 					int interiorOption = input11.nextInt();
-				
+					System.out.println();
+					
 					if (interiorOption == 1) {
-						feature = new HeatedSteeringWheel(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						interiorFeature = new HeatedSteeringWheel(interiorFeature);
+						System.out.println(interiorFeature.getDescription() + " $" + interiorFeature.cost());
 					}
 					
 					if (interiorOption == 2) {
-						feature = new LeatherGearShift(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						interiorFeature = new LeatherGearShift(interiorFeature);
+						System.out.println(interiorFeature.getDescription() + " $" + interiorFeature.cost());
 					}
 					
 					if (interiorOption == 3) {
-						feature = new CarbonFiberAccents(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						interiorFeature = new CarbonFiberAccents(interiorFeature);
+						System.out.println(interiorFeature.getDescription() + " $" + interiorFeature.cost());
 					}
 					
 					if (interiorOption == 4) {
-						feature = new BoseAudio(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						interiorFeature = new BoseAudio(interiorFeature);
+						System.out.println(interiorFeature.getDescription() + " $" + interiorFeature.cost());
 					}
 					
 					if (interiorOption == 5) {
@@ -264,34 +273,36 @@ public class Application {
 			
 				//Decorator Pattern to Select Exterior Features 
 				while (true) {
-					System.out.println("Select Dealership Exterior Options to Add on the Stock Vehicle: ");
+					System.out.println("\nSelect Dealership Exterior Options to Add on the Stock Vehicle: ");
 					System.out.println("1. Body Kit");
 					System.out.println("2. LED Head Lights");
 					System.out.println("3. Window Tints (60%)");
 					System.out.println("4. Bike Rack");
+					System.out.println("5. Exit Exterior Options");
 				
 					Scanner input12 = new Scanner(System.in);
 					System.out.print("Selection an option: ");
 					int exteriorOption = input12.nextInt();
-				
+					System.out.println();
+					
 					if (exteriorOption == 1) {
-						feature = new BodyKit(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						exteriorFeature = new BodyKit(exteriorFeature);
+						System.out.println(exteriorFeature.getDescription() + " $" + exteriorFeature.cost());
 					}
 					
 					if (exteriorOption == 2) {
-						feature = new LEDLights(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						exteriorFeature = new LEDLights(exteriorFeature);
+						System.out.println(exteriorFeature.getDescription() + " $" + exteriorFeature.cost());
 					}
 					
 					if (exteriorOption == 3) {
-						feature = new Tints(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						exteriorFeature = new Tints(exteriorFeature);
+						System.out.println(exteriorFeature.getDescription() + " $" + exteriorFeature.cost());
 					}
 					
 					if (exteriorOption == 4) {
-						feature = new BikeRack(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						exteriorFeature = new BikeRack(exteriorFeature);
+						System.out.println(exteriorFeature.getDescription() + " $" + exteriorFeature.cost());
 					}
 					
 					if (exteriorOption == 5) {
@@ -301,41 +312,42 @@ public class Application {
 				
 				//Decorator Pattern to Select Technology Features 
 				while (true) {
-					System.out.println("Select Dealership Technology Options to Add on the Stock Vehicle: ");
+					System.out.println("\nSelect Dealership Technology Options to Add on the Stock Vehicle: ");
 					System.out.println("1. Camera Systems");
 					System.out.println("2. Wireless Charger and Connectivity");
 					System.out.println("3. Proximity Sensors");
 					System.out.println("4. Navigation System");
+					System.out.println("5. Exit Technology Options");
 					
 					Scanner input13 = new Scanner(System.in);
 					System.out.print("Selection an option: ");
 					int technologyOption = input13.nextInt();
-				
+					System.out.println();
+					
 					if (technologyOption == 1) {
-						feature = new Cameras(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						technologyFeature = new Cameras(technologyFeature);
+						System.out.println(technologyFeature.getDescription() + " $" + technologyFeature.cost());
 					}
 					
 					if (technologyOption == 2) {
-						feature = new Wireless(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						technologyFeature = new Wireless(technologyFeature);
+						System.out.println(technologyFeature.getDescription() + " $" + technologyFeature.cost());
 					}
 					
 					if (technologyOption == 3) {
-						feature = new Sensors(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						technologyFeature = new Sensors(technologyFeature);
+						System.out.println(technologyFeature.getDescription() + " $" + technologyFeature.cost());
 					}
 					
 					if (technologyOption == 4) {
-						feature = new Navigation(feature);
-						System.out.println(feature.getDescription() + " $" + feature.cost());
+						technologyFeature = new Navigation(technologyFeature);
+						System.out.println(technologyFeature.getDescription() + " $" + technologyFeature.cost());
 					}
 					
 					if (technologyOption == 5) {
 						break;
 					}
 				}
-				
 			}
 			
 			if (option == 5) {

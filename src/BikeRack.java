@@ -1,4 +1,4 @@
-
+//Decorator Pattern File
 public class BikeRack extends FeatureDecorator {
 	
 	public BikeRack(VehicleFeatures vehicleFeatures) {

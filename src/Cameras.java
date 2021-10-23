@@ -1,4 +1,4 @@
-
+//Decorator Pattern File
 public class Cameras extends FeatureDecorator {
 	
 	public Cameras(VehicleFeatures vehicleFeatures) {

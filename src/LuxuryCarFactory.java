@@ -1,4 +1,4 @@
-
+//Abstract Factor Pattern File
 public class LuxuryCarFactory implements VehicleManufacturerFactory {
 	
 	public Seat createSeat() {

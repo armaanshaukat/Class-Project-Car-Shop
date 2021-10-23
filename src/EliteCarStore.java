@@ -1,4 +1,4 @@
-
+//Abstract Factory Pattern File
 public class EliteCarStore extends VehicleStore {
 
 	protected Vehicle createVehicle(String item) {

@@ -1,4 +1,4 @@
-
+//Decorator Pattern File
 public class Tints extends FeatureDecorator {
 	
 	public Tints(VehicleFeatures vehicleFeatures) {

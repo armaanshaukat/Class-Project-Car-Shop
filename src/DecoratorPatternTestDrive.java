@@ -1,6 +1,7 @@
+//Decorator Pattern File
 import java.util.Scanner;
 
-public class DecoratorPatternTest {
+public class DecoratorPatternTestDrive {
 
 	public static void main(String[] args) {
 		VehicleFeatures feature = new Technology();
@@ -42,7 +43,7 @@ public class DecoratorPatternTest {
 		//System.out.println(feature.getDescription() + " $" + feature.cost());
 		
 		while (true) {
-			System.out.println("Select Dealership Interior Options to Add on the Stock Vehicle: ");
+			System.out.println("\nSelect Dealership Interior Options to Add on the Stock Vehicle: ");
 			System.out.println("1. Heated Leather Steering Wheel");
 			System.out.println("2. Leather Gear Shift");
 			System.out.println("3. Carbon Fiber Accents");
@@ -52,6 +53,7 @@ public class DecoratorPatternTest {
 			Scanner input7 = new Scanner(System.in);
 			System.out.print("Selection an option: ");
 			int interiorOption = input7.nextInt();
+			System.out.println();
 		
 			if (interiorOption == 1) {
 				feature = new HeatedSteeringWheel(feature);
@@ -75,6 +77,10 @@ public class DecoratorPatternTest {
 			
 			if (interiorOption == 5) {
 				break;
-			}
+		}
 	}
-}}
+  }
+}
+
+// Decorator Pattern File - BikeRack, BodyKit, BoseAudio, Cameras, CarbonFiberAccents, DecoratorPatternTestDrive, Exterior, FeatureDecorator, HeatedSteeringWheel,
+// Interior, LeatherGearShift, LEDLights, Navigation, Sensors, Technology, Tints, VehicleFeatures, Wireless

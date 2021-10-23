@@ -1,4 +1,4 @@
-
+//Iterator Pattern File
 public class CarInventoryIterator implements Iterator {
 
 	CarInventory[] inventory;

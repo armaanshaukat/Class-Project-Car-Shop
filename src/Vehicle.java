@@ -1,4 +1,4 @@
-
+//Abstract Factory Pattern File
 public abstract class Vehicle {
 	String name;
 	
@@ -10,15 +10,15 @@ public abstract class Vehicle {
 	abstract void prepare();
 	
 	void order() {
-		System.out.println();
+		System.out.println("Order Sent to Manufacturer");
 	}
 	
 	void build() {
-		System.out.println();
+		System.out.println("Order Recieved by Manufacturer and Building in Progress");
 	}
 	
 	void ship() {
-		System.out.println();
+		System.out.println("Order is Complete and is Being Shipped to the Dealership");
 	}
 	
 	void setName(String name) {
@@ -31,7 +31,7 @@ public abstract class Vehicle {
 	
 	public String toString() {
 		StringBuffer result = new StringBuffer();
-		result.append("---- " + name);
+		result.append("\n----- " + name + " Stock Features -----\n");
 		
 		if (seat != null) {
 			result.append(seat);

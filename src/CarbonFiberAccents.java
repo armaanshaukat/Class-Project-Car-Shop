@@ -1,4 +1,4 @@
-
+//Decorator Pattern File
 public class CarbonFiberAccents extends FeatureDecorator {
 	
 	public CarbonFiberAccents(VehicleFeatures vehicleFeatures) {

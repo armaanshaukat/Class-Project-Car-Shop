@@ -1,3 +1,4 @@
+//Observer Pattern File
 import java.util.ArrayList;
 
 public class LotData implements Subject {

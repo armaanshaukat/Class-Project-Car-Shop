@@ -1,4 +1,4 @@
-
+//Decorator Pattern File
 public class HeatedSteeringWheel extends FeatureDecorator {
 	
 	public HeatedSteeringWheel(VehicleFeatures vehicleFeatures) {

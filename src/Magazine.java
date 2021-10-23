@@ -1,4 +1,4 @@
-
+//Observer Pattern File
 public class Magazine implements Observer, ObserverDisplay {
 	private String manufacturer, model;
 	private int year, price;
@@ -18,8 +18,8 @@ public class Magazine implements Observer, ObserverDisplay {
 	}
 	
 	public void display() {
-		System.out.println("ARMAAN'S DEALERSHIP has a new vehicle available: " + manufacturer + " - " + model + " - "  + year + " - " + price);
-		System.out.println("Visit ARMAANS'S DEALERSHIP for all features available with the vehicle");
+		System.out.println("Sending the Following Vehicle Information to Our Subscribers: Manufacturer: " + manufacturer + " - Model: " + model + 
+						   " - Year: "  + year + " - Price: " + price);
+		System.out.println("Visit ARMAANS'S DEALERSHIP For Complete Vehicles Features List");
 	}
-
 }

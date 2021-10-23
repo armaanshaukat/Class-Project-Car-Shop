@@ -1,4 +1,4 @@
-
+//Iterator Pattern File
 public class CarInventory {
 	String manufacturer;
 	String model;

@@ -1,4 +1,4 @@
-
+//Decorator Pattern File
 public class LeatherGearShift extends FeatureDecorator {
 	
 	public LeatherGearShift(VehicleFeatures vehicleFeatures) {

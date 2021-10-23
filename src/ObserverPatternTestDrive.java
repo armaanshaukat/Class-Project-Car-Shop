@@ -1,3 +1,4 @@
+//Observer Pattern File
 import java.util.Scanner;
 
 public class ObserverPatternTestDrive {
@@ -6,7 +7,8 @@ public class ObserverPatternTestDrive {
 		LotData lotData = new LotData();
 		Magazine autoTrader = new Magazine(lotData);
 	
-		//lotData.addedAutomobile("Honda", "Accord", 2002, 16516);
+		lotData.addedAutomobile("Honda", "Accord", 2002, 16516);
+		System.out.println();
 		
 		Scanner input2 = new Scanner(System.in);
 		Scanner input3 = new Scanner(System.in);
@@ -21,9 +23,10 @@ public class ObserverPatternTestDrive {
 		int mfgYear = input4.nextInt();
 		System.out.print("Enter the wanted price of sale for your vehicle: ");
 		int salePrice = input5.nextInt();
+		System.out.println();
 		
 		lotData.addedAutomobile(mfgName, modelName, mfgYear, salePrice);
 	}
 }
 
-// Observer Pattern Files - Subject.java, ObserverPatternTestDrive.java, ObserverDisplay.java, Observer.java, Magazine.java, LotData.java, 
+// Observer Pattern Files - Subject, ObserverPatternTestDrive, ObserverDisplay, Observer, Magazine, LotData 
